@@ -1,3 +1,4 @@
+const config = require('./config');
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -9,6 +10,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.listen(3000, () => {
-  console.log(`server is running on port 3000`);
+app.listen(config.PORT, () => {
+  console.log(config);
+  console.log(`server is running on port ${config.PORT}`);
 });
